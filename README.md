@@ -52,3 +52,6 @@ For efficieny, it is recommended to extract comic panel image features off-line 
 
 ## Training ASTERX
 Using the extracted features from the previous step, ASTERX can be trained using the `scripts/training.py`. Exact details on (hyper)parameters can be found in my thesis, but notable settings are: `--sampling-key` determines which type of candidates are sampled, and `--sampling-strategy` determines the algorithm used to sample these candidates (I recommend using `mix`, as others can be very slow), `--no-cls-optimization` and `--no-tok-optimization` determine whether to optimize the sequential encoder to perform the ordering and the retrieval optimizations repsectively. `--negate-sampling` flips the `--sampling-key` (e.g. `--sampling-key=comic_level` becomes "All comics except for the comic this panel is from" when negated).
+
+## Trained Model Checkpoints
+Trained model checkpoints (including a ViT trained on the TINTIN corpus using DINO) are [publicly available](https://drive.google.com/drive/folders/1umCCyYNuD-yc_T7nmAbhQOhyDNxXWDNA?usp=sharing).
